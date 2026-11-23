@@ -1,0 +1,85 @@
+[logic@stalker_b103_1]
+suitable = {!surge_started} true
+active = walker@1
+prior = 200
+
+[walker@1]
+path_walk = lost_merc_1_walk
+path_look = lost_merc_1_look
+
+[logic@stalker_b103_2]
+suitable = {!surge_started} true
+active = walker@2
+prior = 200
+
+[walker@2]
+path_walk = lost_merc_2_walk
+path_look = lost_merc_2_look
+def_state_moving1 = sprint
+
+[logic@stalker_b103_3]
+suitable = {!surge_started} true
+active = animpoint@3
+prior = 200
+
+[animpoint@3]
+cover_name = zat_b103_merc_smart_animpoint_1
+reach_distance = 1
+
+[logic@stalker_b103_4]
+suitable = {!surge_started} true
+active = animpoint@4
+prior = 200
+
+[animpoint@4]
+cover_name = zat_b103_merc_smart_animpoint_2
+reach_distance = 1
+
+[logic@stalker_b103_5]
+suitable = {!surge_started} true
+active = animpoint@5
+prior = 200
+
+[animpoint@5]
+cover_name = zat_b103_merc_smart_animpoint_3
+reach_distance = 1
+
+[logic@stalker_b103_6]
+suitable = {!surge_started} true
+active = walker@6
+prior = 200
+
+[walker@6]
+path_walk = lost_merc_6_walk
+path_look = lost_merc_6_look
+
+[logic@stalker_b103_7]
+suitable = {!surge_started} true
+active = walker@7
+prior = 100
+
+[walker@7]
+path_walk = lost_merc_7_walk
+path_look = lost_merc_7_look
+
+[logic@stalker_b103_8]
+suitable = {!surge_started} true
+active     = walker@leader
+prior      = 200
+
+[walker@leader]
+path_walk = lost_merc_leader_walk
+path_look = lost_merc_leader_look
+def_state_moving1 = sprint
+def_state_moving2 = sprint
+def_state_moving3 = sprint
+meet = meet@stalker_b103_8
+
+[meet@stalker_b103_8]
+close_anim = ward
+close_victim = actor
+close_distance = 4
+far_victim 	 = actor
+far_distance = 4
+close_victim = actor
+use = {=actor_enemy} false, true

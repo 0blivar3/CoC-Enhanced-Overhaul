@@ -1,0 +1,77 @@
+[animpoint@def]
+reach_movement = sprint
+out_restr = zat_surge_hide_b103
+
+;LEADER JOB
+
+[logic@surge_job_leader]
+suitable   = {=surge_started} true
+active     = animpoint@leader
+prior      = 200
+
+[animpoint@leader]
+out_restr = zat_surge_hide_b103
+cover_name = zat_b103_animp_surge_leader
+reach_movement = sprint
+
+;JOB HEADERS  
+
+[logic@surge_job_1]
+suitable = {=surge_started} true
+active = animpoint@1
+prior = 200
+
+[logic@surge_job_2]
+suitable = {=surge_started} true
+active = animpoint@2
+prior = 200
+
+[logic@surge_job_3]
+suitable = {=surge_started} true
+active = animpoint@3
+prior = 200
+
+[logic@surge_job_4]
+suitable = {=surge_started} true
+active = animpoint@4
+prior = 200
+
+[logic@surge_job_5]
+suitable = {=surge_started} true
+active = animpoint@5
+prior = 200
+
+[logic@surge_job_6]
+suitable = {=surge_started} true
+active = animpoint@6
+prior = 200
+
+[logic@surge_job_7]
+suitable = {=surge_started} true
+active = animpoint@7
+prior = 200
+
+;JOB SECTIONS
+
+[animpoint@1]:animpoint@def
+cover_name = zat_b103_animp_surge_1
+
+[animpoint@2]:animpoint@def
+cover_name = zat_b103_animp_surge_2
+
+[animpoint@3]:animpoint@def
+cover_name = zat_b103_animp_surge_3
+
+[animpoint@4]:animpoint@def
+cover_name = zat_b103_animp_surge_4
+
+[animpoint@5]:animpoint@def
+cover_name = zat_b103_animp_surge_5
+
+[animpoint@6]:animpoint@def
+cover_name = zat_b103_animp_surge_6 
+
+[animpoint@7]:animpoint@def
+cover_name = zat_b103_animp_surge_7
+
+

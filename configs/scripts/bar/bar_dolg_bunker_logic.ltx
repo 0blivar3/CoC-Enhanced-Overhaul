@@ -1,0 +1,34 @@
+[walker@generic]
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+turn_on_campfire = false
+
+[logic@bar_dolg_leader]
+suitable = {=check_npc_name(bar_dolg_leader)} true
+prior = 200
+active = walker@bar_dolg_leader
+level_spot = quest_npc
+
+[walker@bar_dolg_leader]:walker@generic
+path_walk = bar_dolg_leader_walk
+path_look = bar_dolg_leader_look
+use_camp = false
+meet = meet@bar_dolg_leader
+combat_ignore_cond = {=actor_enemy =check_enemy_name(actor)} false, true
+combat_ignore_keep_when_attacked = true
+invulnerable = {!actor_enemy} true, false
+
+[meet@bar_dolg_leader]
+close_snd_hello = duty_voronin_hello
+close_anim = ward
+close_victim = actor
+close_distance = 3
+far_victim 	 = actor
+far_distance = 4
+close_snd_distance = 3
+close_victim = actor
+use = {=actor_enemy} false, true
+trade_enable = false
+allow_break = false
+meet_on_talking = false
