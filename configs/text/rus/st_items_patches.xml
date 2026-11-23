@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<string_table>
+
+	<string id="csky_patch">
+		<text>Нашивка «Чистого Неба»</text>
+	</string>
+	<string id="csky_patch_description">
+		<text>Нашивка, содранная с костюма «Чистого Неба». Служит символом принадлежности к этой группировке.</text>
+	</string>
+
+	<string id="freedom_patch">
+		<text>Нашивка «Свободы»</text>
+	</string>
+	<string id="freedom_patch_description">
+		<text>Нашивка, содранная с костюма свободовца. Служит символом принадлежности к этой группировке.</text>
+	</string>
+
+	<string id="stalker_patch">
+		<text>Нашивка одиночки</text>
+	</string>
+	<string id="stalker_patch_description">
+		<text>Нашивка, содранная с костюма одиночки. Служит символом принадлежности к этой группировке.</text>
+	</string>
+
+	<string id="ecolog_patch">
+		<text>Нашивка учёного</text>
+	</string>
+	<string id="ecolog_patch_description">
+		<text>Нашивка, содранная с костюма учёного. Служит символом принадлежности к этой группировке.</text>
+	</string>
+
+	<string id="bandit_patch">
+		<text>Нашивка бандита</text>
+	</string>
+	<string id="bandit_patch_description">
+		<text>Нашивка, содранная с костюма бандита. Служит символом принадлежности к этой группировке.</text>
+	</string>
+
+	<string id="duty_patch">
+		<text>Нашивка «Долга»</text>
+	</string>
+	<string id="duty_patch_description">
+		<text>Нашивка, содранная с костюма долговца. Служит символом принадлежности к этой группировке.</text>
+	</string>
+
+	<string id="monolith_patch">
+		<text>Нашивка «Монолита»</text>
+	</string>
+	<string id="monolith_patch_description">
+		<text>Нашивка, содранная с костюма монолитовца. Служит символом принадлежности к этой группировке. Многие собирают такие нашивки как трофеи после столкновений с фанатиками или используют в качестве коллекционных предметов, хотя сама по себе она не несёт практической пользы.</text>
+	</string>
+
+	<string id="army_patch">
+		<text>Нашивка военного</text>
+	</string>
+	<string id="army_patch_description">
+		<text>Нашивка, содранная с униформы военного. Служит символом принадлежности к этой группировке.</text>
+	</string>
+
+	<string id="merc_patch">
+		<text>Нашивка наёмника</text>
+	</string>
+	<string id="merc_patch_description">
+		<text>Нашивка, содранная с костюма наёмника. Служит символом принадлежности к этой группировке.</text>
+	</string>
+	
+</string_table>
