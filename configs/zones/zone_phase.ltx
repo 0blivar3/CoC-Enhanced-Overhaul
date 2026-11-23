@@ -1,0 +1,238 @@
+[zone_phase_rift]:zone_base
+GroupControlSection	= spawn_group_zone
+$spawn 			= "zones\phase_rift"
+$def_sphere = 2
+$prefetch 		= 16
+class			= ZS_MBALD
+
+hit_impulse_scale	= 4.0
+effective_radius	= 1.15
+actor_blowout_radius_percent = 0.85
+
+ef_anomaly_type		= 1
+ef_weapon_type		= 13
+
+postprocess		= mosquito_bald    ; грави-искажение
+
+; --- Смешанный урон ---
+hit_type		= shock   ; электрический основной
+
+max_start_power		= 1.1
+attenuation		= 0.85
+
+; -------- Партиклы (из других аномалий) --------
+
+; idle из грави
+idle_particles		        = anomaly2\bold_idle
+
+; blowout из электры
+blowout_particles	        = anomaly2\electra2_blast
+
+; грави-дым
+idle_small_particles	    = anomaly2\gravity_damage_01_smoke
+idle_big_particles	        = anomaly2\gravity_damage_02_smoke
+
+; электрический вход
+entrance_small_particles	= anomaly2\electra_entrance_small
+entrance_big_particles	    = anomaly2\emi_entrance_big_00
+
+; микс ударных эффектов
+hit_small_particles		    = anomaly2\electra_entrance_small
+hit_big_particles		    = anomaly2\gravity_damage_02_blood2
+
+; -------- Звук (микс) --------
+
+idle_sound		    = anomaly\gravi_rumble2
+blowout_sound	    = anomaly\electra_blast1
+hit_sound		    = anomaly\electra_hit
+entrance_sound	    = anomaly\anomaly_gravy_hit1
+
+; -------- Тайминги --------
+
+awaking_time		= 150
+accamulate_time		= 1200
+blowout_time		= 500
+
+disable_time		= 200
+disable_time_small	= 400
+disable_idle_time	= 200
+
+ignore_nonalive		= false
+ignore_small		= false
+ignore_artefacts	= true
+
+; -------- Свет --------
+
+blowout_light		= on
+light_color		    = 0.6,0.7,1.2
+light_range		    = 35.0
+light_time 		    = 1.0
+light_height		= 2.0
+
+idle_light			= off
+
+; -------- Ветер (от грави) --------
+
+blowout_wind		= on
+blowout_wind_time_start = 0
+blowout_wind_time_peak  = 200
+blowout_wind_time_end   = 450
+blowout_wind_power		= 0.6
+
+shape_transp_color		= 150, 100, 255, 70
+shape_edge_color		= 50, 50, 100, 255
+
+[zone_phase_rift_weak]:zone_phase_rift
+GroupControlSection = spawn_group_zone
+$spawn = "zones\phase_rift_weak"
+$def_sphere = 2
+class = ZS_MBALD
+
+hit_impulse_scale = 1.2
+effective_radius = 1.0
+actor_blowout_radius_percent = 0.8
+
+ef_anomaly_type = 1
+ef_weapon_type = 13
+
+postprocess = mosquito_bald
+
+hit_type = shock
+max_start_power = 0.6
+attenuation = 0.9
+
+[zone_phase_rift_normal]:zone_phase_rift
+GroupControlSection = spawn_group_zone
+$spawn = "zones\phase_rift_normal"
+$def_sphere = 2
+class = ZS_MBALD
+
+hit_impulse_scale = 3.0
+effective_radius = 1.15
+actor_blowout_radius_percent = 0.85
+
+postprocess = mosquito_bald
+
+hit_type = shock
+max_start_power = 1.1
+attenuation = 0.85
+
+; --- Партиклы
+
+idle_particles = anomaly2\bold_idle
+blowout_particles = anomaly2\electra2_blast
+
+idle_small_particles = anomaly2\gravity_damage_01_smoke
+idle_big_particles = anomaly2\gravity_damage_02_smoke
+
+entrance_small_particles = anomaly2\electra_entrance_small
+entrance_big_particles = anomaly2\emi_entrance_big_00
+
+hit_small_particles = anomaly2\electra_entrance_small
+hit_big_particles = anomaly2\gravity_damage_02_blood2
+
+; --- Звук (более агрессивный микс)
+
+idle_sound = anomaly\gravi_rumble2
+blowout_sound = anomaly\electra_blast
+hit_sound = anomaly\electra_hit
+entrance_sound = anomaly\anomaly_gravy_hit1
+
+; --- Тайминги
+
+awaking_time = 150
+accamulate_time = 1200
+blowout_time = 500
+
+disable_time = 200
+disable_time_small = 400
+disable_idle_time = 200
+
+ignore_nonalive = false
+ignore_small = false
+ignore_artefacts = true
+
+blowout_light = on
+light_color = 0.6,0.7,1.2
+light_range = 35.0
+light_time = 1.0
+light_height = 2.0
+
+idle_light = off
+
+blowout_wind = on
+blowout_wind_time_start = 0
+blowout_wind_time_peak = 200
+blowout_wind_time_end = 450
+blowout_wind_power = 0.6
+
+shape_transp_color = 150, 100, 255, 70
+shape_edge_color = 50, 50, 100, 255
+
+[zone_phase_rift_strong]:zone_phase_rift
+GroupControlSection = spawn_group_zone
+$spawn = "zones\phase_rift_strong"
+$def_sphere = 3
+class = ZS_MBALD
+
+hit_impulse_scale = 6.0
+effective_radius = 1.4
+actor_blowout_radius_percent = 0.9
+
+postprocess = mosquito_bald
+
+hit_type = shock
+max_start_power = 1.6
+attenuation = 0.8
+
+; --- Партиклы (максимальный микс)
+
+idle_particles = anomaly2\bold_idle
+blowout_particles = anomaly2\electra2_blast
+
+idle_small_particles = anomaly2\gravity_damage_01_smoke
+idle_big_particles = anomaly2\gravity_damage_02_smoke
+
+entrance_small_particles = anomaly2\electra_entrance_small
+entrance_big_particles = anomaly2\emi_entrance_big_00
+
+hit_small_particles = anomaly2\electra_entrance_small
+hit_big_particles = anomaly2\gravity_entrance_big
+
+; --- Звук
+
+idle_sound = anomaly\gravi_rumble3
+blowout_sound = anomaly\electra_blast
+hit_sound = anomaly\electra_hit
+entrance_sound = anomaly\anomaly_gravy_hit1
+
+; --- Тайминги (быстро, резко)
+
+awaking_time = 80
+accamulate_time = 800
+blowout_time = 600
+
+disable_time = 150
+disable_time_small = 300
+disable_idle_time = 150
+
+ignore_nonalive = false
+ignore_small = false
+ignore_artefacts = true
+
+blowout_light = on
+light_color = 0.7,0.8,1.4
+light_range = 50.0
+light_time = 1.4
+light_height = 3.0
+
+idle_light = off
+
+blowout_wind = on
+blowout_wind_time_start = 0
+blowout_wind_time_peak = 150
+blowout_wind_time_end = 500
+blowout_wind_power = 1.0
+
+shape_transp_color = 180, 80, 255, 90
+shape_edge_color = 80, 30, 120, 255
