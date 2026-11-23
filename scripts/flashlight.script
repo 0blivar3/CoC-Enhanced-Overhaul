@@ -1,0 +1,41 @@
+-- Пути к звукам относительно папки gamedata\sounds\
+local sound_flashlight_on  = sound_object([[makdm\bandit_outfit_take]])
+local sound_flashlight_off = sound_object([[makdm\bad_box]])
+
+-- Хранит состояние фонарика на предыдущем кадре: nil (неизвестно), true (вкл), false (выкл)
+local last_state = nil 
+
+---------------------
+-- FUNC - ставится на апдейт актора в bind_stalker.script
+---------------------
+function flashlight_update()
+	local torch = db.actor:object("device_torch")
+	
+	-- Если фонарика вообще нет в инвентаре (выложили/потеряли)
+	if not torch then 
+		last_state = nil
+		return 
+	end
+	
+	local current_state = torch:torch_enabled()
+	
+	-- Первое включение скрипта при загрузке игры или поднятии фонаря
+	if last_state == nil then
+		last_state = current_state
+		return
+	end
+	
+	-- Если текущее состояние НЕ совпадает с прошлым — значит, игрок нажал кнопку
+	if current_state ~= last_state then
+		if current_state then
+			-- Фонарик включили
+			sound_flashlight_on:play_at_pos(db.actor, db.actor:position(), 0, sound_object.s3d)
+		else
+			-- Фонарик выключили
+			sound_flashlight_off:play_at_pos(db.actor, db.actor:position(), 0, sound_object.s3d)
+		end
+		
+		-- Запоминаем новое состояние
+		last_state = current_state
+	end
+end
